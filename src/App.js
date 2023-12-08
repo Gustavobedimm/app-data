@@ -20,8 +20,8 @@ function App() {
       var mesesTotal = (dataAtual.getFullYear() - dataNascimento.getFullYear())*12 + (dataAtual.getMonth() - dataNascimento.getMonth());
       const mesesRestantes = mesesTotal - (idade * 12);
       setTexto(idade+" anos e "+mesesRestantes+ " meses te amando ❤️❤️")
-      setTexto2("ou " + mesesTotal + "meses")
-      setTexto3("ou " + diffInDays + "dias")
+      setTexto2("ou " + mesesTotal + " Meses")
+      setTexto3("ou " + Math.floor(diffInDays) + " Dias")
 
     }
     calcula();
