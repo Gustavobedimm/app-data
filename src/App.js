@@ -7,6 +7,11 @@ function App() {
   const [texto, setTexto] = useState("");
   const [texto2, setTexto2] = useState("");
   const [texto3, setTexto3] = useState("");
+  const [days, setDays] = useState("");
+  const [hours, setHours] = useState("");
+  const [minutes, setMinutes] = useState("");
+  const [seconds, setSeconds] = useState("");
+
 
   useEffect(() => {
     function calcula() {
@@ -25,6 +30,22 @@ function App() {
       setTexto2("ou " + mesesTotal + " Meses")
       setTexto3("ou " + Math.floor(diffInDays) + " Dias")
     }
+    const newtYear = new Date().getFullYear() + 1;
+    const newYearTime = new Date(`March 29 ${newtYear} 00:00:00`);
+
+    const updateCountdown = () => {
+      const currentTime = new Date();
+      const difference = newYearTime - currentTime;
+      const days = Math.floor(difference / 1000 / 60 / 60 / 24);
+      const hours = Math.floor(difference / 1000 / 60 / 60) % 24;
+      const minutes = Math.floor(difference / 1000 / 60) % 60;
+      const seconds = Math.floor(difference / 1000) % 60;
+      setDays(days);
+      setHours(hours);
+      setMinutes(minutes);
+      setSeconds(seconds);
+    };
+    setInterval(updateCountdown, 1000);
     calcula();
   }, []);
   return (
@@ -37,22 +58,22 @@ function App() {
         <img className="App-logo" src={img1} />
       </header>
  
-<h1>Contagem regressiva : </h1>
-<div id="countdown" class="countdown">
-	<div class="time">
-		<h2 id="days">00</h2>
+<h1>Contagem regressiva 4 Anos de namoro: </h1>
+<div id="countdown" className="countdown">
+	<div className="time">
+		<h2 id="days">{days}</h2>
 		<small>dias</small>
 	</div>
-	<div class="time">
-		<h2 id="hours">00</h2>
+	<div className="time">
+		<h2 id="hours">{hours}</h2>
 		<small>horas</small>
 	</div>
-	<div class="time">
-		<h2 id="minutes">00</h2>
+	<div className="time">
+		<h2 id="minutes">{minutes}</h2>
 		<small>minutos</small>
 	</div>
-	<div class="time">
-		<h2 id="seconds">00</h2>
+	<div className="time">
+		<h2 id="seconds">{seconds}</h2>
 		<small>segundos</small>
 	</div>
 </div>
