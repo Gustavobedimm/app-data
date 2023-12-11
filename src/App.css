@@ -24,7 +24,13 @@
   font-size: calc(10px + 2vmin);
   color: #cc444b;
 }
-
+.texto{
+  font-size: 10px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  margin-top: -25px;
+  margin-bottom: 30px;
+}
 .App-link {
   color: #61dafb;
 }
@@ -35,6 +41,13 @@
 	justify-content: center;
 	margin: 15px;
 }
+.countdown{
+  display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -42,5 +55,30 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.heart {
+  width: 100px;
+  height: 100px;
+  margin-top: -60px;
+  margin-left: 100px;
+  margin-bottom: -50px;
+  transform: translate(-50%, -50%);
+  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  animation: fave-heart 1s steps(28) infinite;
+}
+.heart{
+  background-position: -2800px 0;
+  transition: background 1s steps(28);
+
+}
+@keyframes fave-heart {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2800px 0;
   }
 }
