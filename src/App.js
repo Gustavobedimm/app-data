@@ -3,6 +3,7 @@ import img1 from "./assets/IMG.JPG";
 import "./App.css";
 
 function App() {
+  const [texto4, setTexto4] = useState("");
   const [texto, setTexto] = useState("");
   const [texto2, setTexto2] = useState("");
   const [texto3, setTexto3] = useState("");
@@ -19,6 +20,7 @@ function App() {
       const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
       var mesesTotal = (dataAtual.getFullYear() - dataNascimento.getFullYear())*12 + (dataAtual.getMonth() - dataNascimento.getMonth());
       const mesesRestantes = mesesTotal - (idade * 12);
+      setTexto2("29/03/2020")
       setTexto(idade+" anos e "+mesesRestantes+ " meses te amando ❤️❤️")
       setTexto2("ou " + mesesTotal + " Meses")
       setTexto3("ou " + Math.floor(diffInDays) + " Dias")
@@ -29,19 +31,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          {texto}
-        </p>
-        <p>
-          {texto2}
-        </p>
-        <p>
-          {texto3}
-        </p>
+        <p>{texto4}</p>
+        <p>{texto}</p>
+        <p>{texto2}</p>
+        <p>{texto3}</p>
         <img className="App-logo" src={img1} />
       </header>
     </div>
   );
 }
-
 export default App;
