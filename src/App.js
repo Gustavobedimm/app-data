@@ -20,7 +20,7 @@ function App() {
       const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
       var mesesTotal = (dataAtual.getFullYear() - dataNascimento.getFullYear())*12 + (dataAtual.getMonth() - dataNascimento.getMonth());
       const mesesRestantes = mesesTotal - (idade * 12);
-      setTexto2("29/03/2020")
+      setTexto4("29/03/2020")
       setTexto(idade+" anos e "+mesesRestantes+ " meses te amando ❤️❤️")
       setTexto2("ou " + mesesTotal + " Meses")
       setTexto3("ou " + Math.floor(diffInDays) + " Dias")
