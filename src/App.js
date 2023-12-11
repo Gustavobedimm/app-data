@@ -24,7 +24,6 @@ function App() {
       setTexto(idade+" anos e "+mesesRestantes+ " meses te amando ❤️❤️")
       setTexto2("ou " + mesesTotal + " Meses")
       setTexto3("ou " + Math.floor(diffInDays) + " Dias")
-
     }
     calcula();
   }, []);
@@ -37,6 +36,26 @@ function App() {
         <p>{texto3}</p>
         <img className="App-logo" src={img1} />
       </header>
+ 
+<h1>Contagem regressiva : </h1>
+<div id="countdown" class="countdown">
+	<div class="time">
+		<h2 id="days">00</h2>
+		<small>dias</small>
+	</div>
+	<div class="time">
+		<h2 id="hours">00</h2>
+		<small>horas</small>
+	</div>
+	<div class="time">
+		<h2 id="minutes">00</h2>
+		<small>minutos</small>
+	</div>
+	<div class="time">
+		<h2 id="seconds">00</h2>
+		<small>segundos</small>
+	</div>
+</div>
     </div>
   );
 }
